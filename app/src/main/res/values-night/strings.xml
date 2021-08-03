@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_player_hint">enter new player name</string>
+    <string name="add_player_button_title">Add new player</string>
+    <string name="first_player_title">Player 1</string>
+    <string name="score_hint">Score</string>
+    <string name="second_player_title">Player 2</string>
+    <string name="add_game_button_title">add game</string>
+    <string name="payers_rating_title">Payers rating:</string>
+    <string name="all_games_button_title">See all games</string>
+    <string name="wins_title">wins:</string>
+    <string name="games_title">games:</string>
+    <string name="versus_title">VS</string>
+    <string name="edit_button_title">Edit</string>
+    <string name="save_button_title">Save</string>
+    <string name="no_score_warning">Please enter scores</string>
+    <string name="same_player_warning">Choose different players</string>
+    <string name="equal_score_warning">There must be a winner!</string>
+</resources>

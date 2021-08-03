@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.main.MainActivity">
+
+    <EditText
+        android:id="@+id/new_player_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_full"
+        android:autofillHints="name"
+        android:hint="@string/add_player_hint"
+        android:inputType="text"
+        android:lines="1"
+        android:textColor="@android:color/holo_purple"
+        app:layout_constraintEnd_toStartOf="@+id/add_player_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_player_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_full"
+        android:text="@string/add_player_button_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/player_one_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin_full"
+        android:text="@string/first_player_title"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/first_player_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/first_player_spinner" />
+
+    <Spinner
+        android:id="@+id/first_player_spinner"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/default_spinner_height"
+        android:layout_margin="@dimen/default_margin_full"
+        android:gravity="end"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toStartOf="@+id/first_player_score"
+        app:layout_constraintStart_toEndOf="@+id/player_one_title"
+        app:layout_constraintTop_toBottomOf="@+id/new_player_edit_text" />
+
+    <EditText
+        android:id="@+id/first_player_score"
+        android:layout_width="@dimen/default_score_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_full"
+        android:autofillHints="name"
+        android:gravity="center"
+        android:hint="@string/score_hint"
+        android:inputType="number"
+        android:textColor="@android:color/holo_purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_player_edit_text" />
+
+    <TextView
+        android:id="@+id/player_two_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_margin_full"
+        android:text="@string/second_player_title"
+        android:textSize="@dimen/default_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/second_player_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/second_player_spinner" />
+
+    <Spinner
+        android:id="@+id/second_player_spinner"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/default_spinner_height"
+        android:layout_margin="@dimen/default_margin_full"
+        android:gravity="end"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toStartOf="@+id/second_player_score"
+        app:layout_constraintStart_toEndOf="@+id/player_two_title"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_spinner" />
+
+    <EditText
+        android:id="@+id/second_player_score"
+        android:layout_width="@dimen/default_score_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_full"
+        android:autofillHints="name"
+        android:gravity="center"
+        android:hint="@string/score_hint"
+        android:inputType="number"
+        android:textColor="@android:color/holo_purple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/first_player_spinner" />
+
+    <Button
+        android:id="@+id/add_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_full"
+        android:text="@string/add_game_button_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/second_player_spinner" />
+
+    <TextView
+        android:id="@+id/results_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin_full"
+        android:text="@string/payers_rating_title"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="@dimen/title_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_game_button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/players_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/default_margin_full"
+        android:layout_marginBottom="@dimen/default_margin_full"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/all_games_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/results_title" />
+
+    <Button
+        android:id="@+id/all_games_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin_full"
+        android:text="@string/all_games_button_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
