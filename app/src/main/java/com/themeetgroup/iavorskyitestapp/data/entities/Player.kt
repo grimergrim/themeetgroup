@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 class Player(
     @ColumnInfo(name = "name")
     val name: String?,
-    @ColumnInfo(name = "number_of_goals")
+    @ColumnInfo(name = "number_of_games")
     var numberOfGames: Int,
     @ColumnInfo(name = "number_of_wins")
     var numberOfWins: Int

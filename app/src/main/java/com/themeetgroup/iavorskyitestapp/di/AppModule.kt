@@ -3,6 +3,7 @@ package com.themeetgroup.iavorskyitestapp.di
 import android.content.Context
 import androidx.room.Room
 import com.themeetgroup.iavorskyitestapp.data.database.AppDatabase
+import com.themeetgroup.iavorskyitestapp.data.database.PrePopulationData
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +18,8 @@ object AppModule {
     @Singleton
     @Provides
     fun provideAppDatabase(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, AppDatabase::class.java, "app_db").build()
+        Room.databaseBuilder(context, AppDatabase::class.java, "app_db")
+            .addCallback(PrePopulationData()).build()
 
     @Singleton
     @Provides
